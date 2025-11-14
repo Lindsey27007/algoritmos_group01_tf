@@ -2,5 +2,6 @@
 Mi proyecto de algoritmos
 
 Integrantes :
--Santiago Villamar
+
+- Santiago Villamar
 - Sebastián Castillo
