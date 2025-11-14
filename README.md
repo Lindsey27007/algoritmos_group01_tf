@@ -3,3 +3,4 @@ Mi proyecto de algoritmos
 
 Integrantes :
 -Santiago Villamar
+- Sebastián Castillo
