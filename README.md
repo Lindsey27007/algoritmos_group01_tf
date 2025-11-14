@@ -5,3 +5,4 @@ Integrantes :
 
 - Santiago Villamar
 - Sebastián Castillo
+- Lindsey Yorget
