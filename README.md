@@ -10,6 +10,7 @@ Integrantes :
 Casos:
 
 Mundo IA – La Máquina Suprema
+
 Diagnóstico con Inteligencia Artificial :
  El uso de la inteligencia artificial en el ámbito médico ha transformado la forma en que se realizan diagnósticos. Los algoritmos de aprendizaje automático permiten procesar imágenes radiológicas con gran precisión, logrando en algunos casos detectar enfermedades en etapas tempranas. Esto representa un beneficio importante para los pacientes, ya que aumenta la probabilidad de un tratamiento oportuno. Sin embargo, la dependencia de la IA plantea riesgos, como la posibilidad de falsos positivos o negativos que pueden afectar la salud de los pacientes. Además, al no existir criterio humano en el proceso, la máquina no considera factores contextuales que podrían ser relevantes para el diagnóstico.
  En el videojuego, este caso puede inspirar un recurso denominado “escáner IA”, que otorga ventajas al jugador al identificar amenazas o problemas, pero que a veces falla, obligando al protagonista a cuestionar si debe confiar ciegamente en la máquina.
@@ -31,6 +32,7 @@ En el videojuego, este caso puede inspirar un aliado “psicólogo” que aconse
 (Revista Perspectivas Psicológicas, UASD, 2021)
 
 Mundo Colaborativo – El Puente del Futuro
+
 Cirugías asistidas por IA :
  El sistema quirúrgico Da Vinci representa un modelo de colaboración entre humanos e inteligencia artificial. En estas cirugías, el robot realiza movimientos de gran precisión, pero siempre bajo el control y supervisión de un cirujano. Esta combinación permite operaciones más seguras y menos invasivas, aunque con un alto costo y la necesidad de un entrenamiento especializado. El caso muestra cómo la colaboración puede potenciar los resultados, pero también revela la incertidumbre que surge cuando la tecnología se convierte en un intermediario de la vida humana.
  En el videojuego, este caso puede inspirar un aliado “robot quirúrgico” que ejecuta tareas precisas, pero que solo funciona correctamente si el jugador da las órdenes adecuadas, reforzando la importancia de la coordinación entre humano y máquina.
