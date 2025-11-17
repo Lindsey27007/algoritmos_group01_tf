@@ -53,10 +53,13 @@ Finalmente, los escenarios de colaboración entre humanos e inteligencia artific
 En conjunto, los casos analizados no solo contribuyen a la reflexión académica, sino que también inspiran el diseño del videojuego propuesto en este trabajo parcial. Cada experiencia real se traduce en personajes, mecánicas e interacciones que permitirán al jugador confrontar dilemas similares, fomentando así la formación de una postura crítica frente al papel de la tecnología en la sociedad contemporánea.
 
 ## Storyboard
+<p align="center">
+  <img src="ImagenesInforme/Storyboard_G01.png">
+</p>
 
----
-Title: Diagrama de clases 
----
+
+## Diagrama de clases
+
 ```mermaid
 classDiagram
 
