@@ -165,3 +165,27 @@ class ArregloRecursos {
     +getPiezas() int
     +reiniciar() void
 }
+```
+## Recursos a Utilizar
+- Aquí debo añadir la carpeta
+
+
+## Plan de Actividades
+
+<p align="center">
+  <img src="ImagenesInforme/TablaActividades.png">
+</p>
+
+## Bibliografía
+
+- Cayo, G. A., & Talledo, J. (2023). Diagnóstico asistido por inteligencia artificial: Avances y desafíos en la práctica médica. Revista Vitalia, 1(2), 45-57. https://revistavitalia.org/index.php/vitalia/article/view/183/278
+
+- De León, M., & Ríos, J. (2022). Vehículos autónomos: Perspectivas tecnológicas y desafíos éticos. Revista de Iniciación Científica, 8(1), 33-47. https://revistas.utp.ac.pa/index.php/ric/article/view/1864/2812
+
+- Ferrada, J. (2009). Decisiones judiciales y racionalidad práctica: Una reflexión crítica. Revista Chilena de Derecho, 36(1), 25-48. https://www.scielo.cl/scielo.php?pid=S0718-00122009000100003&script=sci_arttext
+
+- Méndez, A. (2021). La toma de decisiones en la práctica clínica psicológica. Revista Perspectivas Psicológicas, 5(2), 19-32. https://uasd.edu.do/wp-content/uploads/5.-Revista-Perspectivas-Psicologicas.pdf#page=20
+
+- Melgar, P. (2023). Cirugías asistidas por robots: El futuro de la medicina mínimamente invasiva [Trabajo Fin de Grado, Universidad Europea]. Repositorio Universidad Europea. https://titula.universidadeuropea.com/bitstream/handle/20.500.12880/9049/TFG_Paula%20Melgar%20Barcelona.pdf?sequence=1&isAllowed=y
+
+- González, L., & Ramírez, C. (2023). Inteligencia artificial y periodismo: Retos y oportunidades de la automatización de noticias. Revista Nueva Época, 2(3), 101-118. https://nuevaepoca.revistalatinacs.org/index.php/revista/article/view/1682/3582
