@@ -48,6 +48,9 @@ Periodismo con IA :
  ---
 title: Diagrama de clases 
 ---
+
+classDiagram
+
 Entidad <|-- Jugador
 Entidad <|-- Auto
 Entidad <|-- Secretario
