@@ -1,15 +1,16 @@
 # algoritmos_group01_tf
 Mi proyecto de algoritmos
+Docente: Luis Martin Canaval Sanchez
+Sección:1681
 
-Integrantes :
-
-- Santiago Villamar
+## Integrantes :
+- Villamar Rojas Santiago Augusto
 - Sebastián Castillo
-- Lindsey Yorget
+- Castro Palacios Lindsey Yorget
 
-Casos:
+## Casos:
 
-Mundo IA – La Máquina Suprema
+### Mundo IA – La Máquina Suprema
 
 Diagnóstico con Inteligencia Artificial :
  El uso de la inteligencia artificial en el ámbito médico ha transformado la forma en que se realizan diagnósticos. Los algoritmos de aprendizaje automático permiten procesar imágenes radiológicas con gran precisión, logrando en algunos casos detectar enfermedades en etapas tempranas. Esto representa un beneficio importante para los pacientes, ya que aumenta la probabilidad de un tratamiento oportuno. Sin embargo, la dependencia de la IA plantea riesgos, como la posibilidad de falsos positivos o negativos que pueden afectar la salud de los pacientes. Además, al no existir criterio humano en el proceso, la máquina no considera factores contextuales que podrían ser relevantes para el diagnóstico.
@@ -21,7 +22,7 @@ Los automóviles autónomos, desarrollados por empresas como Tesla y Waymo, son 
 En el videojuego, este caso puede inspirar un enemigo “auto autónomo” que se mueve de manera rígida y predecible, representando la eficiencia de la máquina, pero también la falta de libertad y adaptabilidad.
 (Revista de Iniciación Científica UTP, 2022)
 
-Mundo Humano – La Luz del Pensamiento
+### Mundo Humano – La Luz del Pensamiento
 
 Decisiones judiciales :
 En el campo del derecho, muchas decisiones siguen estando exclusivamente en manos de jueces y magistrados. A diferencia de los algoritmos, los jueces aplican su criterio interpretando normas, evaluando pruebas y considerando el contexto social. Este enfoque aporta creatividad e interpretación humana, pero también implica vulnerabilidad, ya que las decisiones pueden estar influenciadas por sesgos, emociones o corrupción. La justicia basada únicamente en humanos pone de relieve tanto la riqueza del juicio crítico como sus limitaciones.
@@ -32,7 +33,7 @@ En la psicología clínica, los profesionales deben elegir el tipo de terapia m�
 En el videojuego, este caso puede inspirar un aliado “psicólogo” que aconseja al protagonista, pero cuyos consejos pueden ser útiles o confusos, obligando al jugador a reflexionar antes de actuar.
 (Revista Perspectivas Psicológicas, UASD, 2021)
 
-Mundo Colaborativo – El Puente del Futuro
+### Mundo Colaborativo – El Puente del Futuro
 
 Cirugías asistidas por IA :
  El sistema quirúrgico Da Vinci representa un modelo de colaboración entre humanos e inteligencia artificial. En estas cirugías, el robot realiza movimientos de gran precisión, pero siempre bajo el control y supervisión de un cirujano. Esta combinación permite operaciones más seguras y menos invasivas, aunque con un alto costo y la necesidad de un entrenamiento especializado. El caso muestra cómo la colaboración puede potenciar los resultados, pero también revela la incertidumbre que surge cuando la tecnología se convierte en un intermediario de la vida humana.
@@ -44,6 +45,14 @@ Periodismo con IA :
  En el videojuego, este caso puede inspirar un recurso de “información rápida” que el jugador recibe de la IA, pero que debe verificar antes de usar, mostrando el valor del pensamiento crítico frente a datos automáticos.
  (Revista Nueva Época, 2023)
 
+### Conclusiones
+
+El análisis de los seis casos investigados permitió comprender que las decisiones tomadas exclusivamente por la inteligencia artificial, aunque eficientes y rápidas, presentan limitaciones al carecer de un juicio crítico capaz de considerar el contexto. Los diagnósticos médicos automatizados y los vehículos autónomos reflejan esta dualidad: generan beneficios inmediatos, pero también riesgos cuando se confía de manera ciega en la máquina.
+En contraste, los casos basados únicamente en decisiones humanas ponen en evidencia tanto la riqueza del pensamiento crítico como su vulnerabilidad. El criterio de los jueces en los tribunales y la toma de decisiones en psicología clínica muestran la importancia de la creatividad y la interpretación subjetiva, pero también revelan la posibilidad de errores derivados de sesgos, cansancio o emociones.
+Finalmente, los escenarios de colaboración entre humanos e inteligencia artificial resultan ser los más prometedores, ya que combinan la precisión técnica con la supervisión crítica. Las cirugías asistidas por robots y el periodismo apoyado en IA ejemplifican cómo esta sinergia puede generar resultados más completos, aunque no está exenta de tensiones e incertidumbres.
+En conjunto, los casos analizados no solo contribuyen a la reflexión académica, sino que también inspiran el diseño del videojuego propuesto en este trabajo parcial. Cada experiencia real se traduce en personajes, mecánicas e interacciones que permitirán al jugador confrontar dilemas similares, fomentando así la formación de una postura crítica frente al papel de la tecnología en la sociedad contemporánea.
+
+## Storyboard
 
 ---
 Title: Diagrama de clases 
