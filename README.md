@@ -45,8 +45,8 @@ Periodismo con IA :
  (Revista Nueva Época, 2023)
 
 
- ---
-title: Diagrama de clases 
+---
+Title: Diagrama de clases 
 ---
 ```mermaid
 classDiagram
