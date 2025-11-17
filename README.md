@@ -43,3 +43,110 @@ Periodismo con IA :
  En el ámbito de la comunicación, el Washington Post implementó la IA “Heliograf” para redactar noticias breves sobre elecciones o resultados deportivos. La máquina generaba borradores rápidos, mientras que los periodistas humanos revisaban, editaban y añadían contexto. Esta colaboración permitió aumentar la productividad, pero también generó debates sobre la calidad y autenticidad de la información producida. El caso refleja cómo la unión entre IA y humanos puede generar eficiencia, aunque siempre con la incertidumbre de hasta qué punto debe confiar en la máquina.
  En el videojuego, este caso puede inspirar un recurso de “información rápida” que el jugador recibe de la IA, pero que debe verificar antes de usar, mostrando el valor del pensamiento crítico frente a datos automáticos.
  (Revista Nueva Época, 2023)
+
+
+ ---
+title: Diagrama de clases 
+---
+Entidad <|-- Jugador
+Entidad <|-- Auto
+Entidad <|-- Secretario
+Entidad <|-- Piezas
+
+Controlador *-- ArregloRecursos
+Controlador *-- ArregloEnemigos
+Controlador *-- Jugador
+
+ArregloEnemigos *-- Auto
+ArregloEnemigos *-- Secretario
+
+ArregloRecursos *-- Piezas
+
+class Controlador {
+    -arrPieza : ArregloRecursos*
+    -arrEnemigos : ArregloEnemigos*
+    -jugador : Jugador*
+    -nivelActual : int
+    -piezasObjetivo : int
+    -lastSpawnMs : unsigned long
+    -spawnIntervalMs : int
+    -maxEnemigosNivel : int
+    -alternarTipo : bool
+
+    +configurarNivel() void
+    +intentarSpawnear() void
+    +jugarNivel() bool
+    +mover() void
+    +mostrarVidasJugador() void
+    +run() void
+}
+class Entidad {
+    #x : int
+    #y : int
+    #dx : int
+    #dy : int
+    #ancho : int
+    #alto : int
+
+    +mostrar() void
+    +mover() void
+    +borrar() void
+    +intersectar(Entidad* b) bool
+}
+class Jugador {
+    -vidas : int
+    -spawnX : int
+    -spawnY : int
+
+    +mostrar() void
+    +mover() void
+    +borrar() void
+    +setSpawn() void
+    +puedeSerGolpeado() bool
+    +recibirGolpe() bool
+    +getVidas() int
+    +setVidas() void
+}
+
+class Auto {
+    +mostrar() void
+    +borrar() void
+    +mover() void
+}
+
+class Secretario {
+    +mostrar() void
+    +borrar() void
+    +mover() void
+}
+
+class Piezas {
+    +mostrar() void
+    +borrar() void
+    +mover() void
+}
+class ArregloEnemigos {
+    -arrE1 : vector~Auto*~
+    -arrE2 : vector~Secretario*~
+
+    +agregarEnemigo1() void
+    +agregarEnemigo2() void
+    +actualizarTodos() void
+    +verificarCollisionAutos(Jugador* jugador) void
+    +verificarCollisionSecretario(Jugador* jugador) void
+    +cantidadAutos() int
+    +cantidadSecretarios() int
+    +totalEnemigos() int
+    +reiniciar() void
+}
+
+class ArregloRecursos {
+    -piezas : vector~Pieza*~
+
+    +agregar() void
+    +borrar() void
+    +mostrarTodos() void
+    +collisionPiezas(Jugador* jugador) void
+    +getPiezas() int
+    +reiniciar() void
+}
