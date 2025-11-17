@@ -48,7 +48,7 @@ Periodismo con IA :
  ---
 title: Diagrama de clases 
 ---
-
+```mermaid
 classDiagram
 
 Entidad <|-- Jugador
