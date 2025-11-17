@@ -1,7 +1,7 @@
 # algoritmos_group01_tf
 Mi proyecto de algoritmos
-Docente: Luis Martin Canaval Sanchez
-Sección:1681
+- Docente: Luis Martin Canaval Sanchez
+- Sección:1681
 
 ## Integrantes :
 - Villamar Rojas Santiago Augusto
