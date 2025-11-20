@@ -167,7 +167,7 @@ class ArregloRecursos {
 }
 ```
 ## Recursos a Utilizar
-- Aquí debo añadir la carpeta
+[📁 ImagenesInforme](ImagenesInforme/)
 
 
 ## Plan de Actividades
