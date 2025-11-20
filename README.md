@@ -1,5 +1,5 @@
 # algoritmos_group01_tf
-Mi proyecto de algoritmos
+
 - Docente: Luis Martin Canaval Sanchez
 - Sección:1681
 
