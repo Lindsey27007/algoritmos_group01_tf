@@ -25,7 +25,7 @@ namespace TFGAME {
 			panel = panel1->CreateGraphics();
 			buffer = BufferedGraphicsManager::Current->Allocate(panel, panel1->ClientRectangle);
 			form = gcnew MyForm();
-			bmpBackground = gcnew Bitmap("Imagenes\\Pantalla_inicio.jpg");
+			bmpBackground = gcnew Bitmap("Imagenes\\Pantalla_Inicio.jpg");
 		}
 
 	protected:
@@ -90,7 +90,7 @@ namespace TFGAME {
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Margin = System::Windows::Forms::Padding(2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(586, 421);
+			this->panel1->Size = System::Drawing::Size(618, 436);
 			this->panel1->TabIndex = 0;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Inicio::panel1_Paint);
 			// 
@@ -103,7 +103,7 @@ namespace TFGAME {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(583, 419);
+			this->ClientSize = System::Drawing::Size(616, 435);
 			this->Controls->Add(this->panel1);
 			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"Inicio";
