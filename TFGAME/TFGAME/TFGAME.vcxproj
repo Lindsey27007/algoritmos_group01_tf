@@ -119,9 +119,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Frase1.cpp" />
+    <ClCompile Include="Frase2.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Inicio.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="Win.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bala.h" />
@@ -129,6 +131,9 @@
     <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Entidad.h" />
     <ClInclude Include="Frase1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Frase2.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Game.h">
@@ -141,10 +146,16 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Win.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Frase1.resx">
       <DependentUpon>Frase1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frase2.resx">
+      <DependentUpon>Frase2.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Game.resx">
       <DependentUpon>Game.h</DependentUpon>
