@@ -1,5 +1,6 @@
 #pragma once
 #include "MyForm.h"
+#include "Frase1.h" 
 namespace TFGAME {
 
 	using namespace System;
@@ -127,7 +128,12 @@ namespace TFGAME {
 		if (progressBar1->Value == 300)
 		{
 			timer1->Enabled = false;
-			Visible = false;
+			this->Hide();
+
+			// Mostrar formulario de la frase
+			Frase1^ frase = gcnew Frase1();
+			frase->ShowDialog();
+
 			form->ShowDialog();
 			delete buffer;
 			delete panel;
