@@ -33,6 +33,8 @@ namespace TFGAME {
 			p1 = new Personaje(personaje->Width / 4, personaje->Height / 4);
 			control = new Controladora();
 			control->crearEnemigos(enemigo->Width / 4, enemigo->Height / 4);
+			this->KeyPreview = true;
+
 		}
 
 	protected:

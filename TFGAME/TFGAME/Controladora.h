@@ -45,7 +45,6 @@ public:
 		direccion = 'S';
 	}
 	~Personaje() {}
-
 	void mover(Graphics^ gr, char tecla) {
 		switch (tecla)
 		{
@@ -78,9 +77,12 @@ public:
 			if (indiceW > 3)indiceW = 0;
 		}
 	}
+
 	char getDireccion() { return direccion; }
 	int getX() { return x; }
 	int getY() { return y; }
+	void setX(int x) { this->x = x; }
+	void setY(int y) { this->y = y; }
 
 	Rectangle getRectangle() { return Rectangle(x, y, W, H); }
 
@@ -232,7 +234,7 @@ public:
 
 	void dibujarTodo(Graphics^ gr, Bitmap^ bmpEnemigo, Bitmap^ bmpBala) {
 		Font^ miFuente = gcnew Font("Arial Black", 12);
-		gr->DrawString("Intentos restantes: " + intentosRestantes, miFuente, Brushes::WhiteSmoke, 500, 100);
+		gr->DrawString("Intentos restantes: " + intentosRestantes, miFuente, Brushes::WhiteSmoke, 400, 10);
 		gr->DrawLine(Pens::DarkBlue, 0, 100, int(gr->VisibleClipBounds.Width), 100);
 
 		for (auto e : arrE) {
@@ -267,8 +269,11 @@ public:
 		{
 			if (arrE[i]->getRectangle().IntersectsWith(p1->getRectangle())) {
 				intentosRestantes--;
+				p1->setX(70);
+				p1->setY(70);
+				break;
 			}
-
+			
 		}
 		// Colisión entre balas y enemigos
 		for (int i = 0; i < arrE.size(); i++) {
