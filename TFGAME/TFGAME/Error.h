@@ -10,12 +10,12 @@ namespace TFGAME {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for Win
+	/// Summary for Error
 	/// </summary>
-	public ref class Win : public System::Windows::Forms::Form
+	public ref class Error : public System::Windows::Forms::Form
 	{
 	public:
-		Win(void)
+		Error(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace TFGAME {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~Win()
+		~Error()
 		{
 			if (components)
 			{
@@ -50,13 +50,13 @@ namespace TFGAME {
 		{
 			this->SuspendLayout();
 			// 
-			// Win
+			// Error
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(307, 275);
-			this->Name = L"Win";
-			this->Text = L"Win";
+			this->ClientSize = System::Drawing::Size(848, 430);
+			this->Name = L"Error";
+			this->Text = L"Error";
 			this->ResumeLayout(false);
 
 		}

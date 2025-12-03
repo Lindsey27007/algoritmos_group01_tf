@@ -10,12 +10,12 @@ namespace TFGAME {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for Win
+	/// Summary for Juicio
 	/// </summary>
-	public ref class Win : public System::Windows::Forms::Form
+	public ref class Juicio : public System::Windows::Forms::Form
 	{
 	public:
-		Win(void)
+		Juicio(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace TFGAME {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~Win()
+		~Juicio()
 		{
 			if (components)
 			{
@@ -48,17 +48,11 @@ namespace TFGAME {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->SuspendLayout();
-			// 
-			// Win
-			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->components = gcnew System::ComponentModel::Container();
+			this->Size = System::Drawing::Size(300,300);
+			this->Text = L"Juicio";
+			this->Padding = System::Windows::Forms::Padding(0);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(307, 275);
-			this->Name = L"Win";
-			this->Text = L"Win";
-			this->ResumeLayout(false);
-
 		}
 #pragma endregion
 	};

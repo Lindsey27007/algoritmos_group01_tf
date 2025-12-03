@@ -118,10 +118,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Error.cpp" />
     <ClCompile Include="Frase1.cpp" />
     <ClCompile Include="Frase2.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Inicio.cpp" />
+    <ClCompile Include="Juicio.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Win.cpp" />
   </ItemGroup>
@@ -130,6 +132,9 @@
     <ClInclude Include="Controladora.h" />
     <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Entidad.h" />
+    <ClInclude Include="Error.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Frase1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -143,6 +148,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Jugador.h" />
+    <ClInclude Include="Juicio.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -151,6 +159,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Error.resx">
+      <DependentUpon>Error.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frase1.resx">
       <DependentUpon>Frase1.h</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Win.resx">
+      <DependentUpon>Win.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
