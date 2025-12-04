@@ -54,7 +54,7 @@ En conjunto, los casos analizados no solo contribuyen a la reflexión académica
 
 ## Storyboard
 <p align="center">
-  <img src="ImagenesInforme/Storyboard_G01.png">
+  <img src="ImagenesInforme/Storyboard_G1.png">
 </p>
 
 
@@ -153,9 +153,14 @@ class Controladora {
 ## Plan de Actividades
 
 <p align="center">
-  <img src="ImagenesInforme/TablaActividades.png">
+  <img src="ImagenesInforme/Plan de actividades2.png">
 </p>
 
+## Bitacora de uso IA
+
+<p align="center">
+  <img src="ImagenesInforme/Bitácora uso IA.png">
+</p>
 ## Bibliografía
 
 - Cayo, G. A., & Talledo, J. (2023). Diagnóstico asistido por inteligencia artificial: Avances y desafíos en la práctica médica. Revista Vitalia, 1(2), 45-57. https://revistavitalia.org/index.php/vitalia/article/view/183/278
