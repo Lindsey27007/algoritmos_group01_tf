@@ -23,6 +23,7 @@ namespace TFGAME {
 			//TODO: Add the constructor code here
 			//
 			this->KeyPreview = true;
+			this->KeyDown += gcnew KeyEventHandler(this, &InstruccionesMundo2::InstruccionesMundo2_KeyDown);
 		}
 
 	protected:
@@ -36,7 +37,7 @@ namespace TFGAME {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Panel^ panel2;
 	protected:
 
 	private:
@@ -52,26 +53,27 @@ namespace TFGAME {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->StartPosition = FormStartPosition::CenterScreen;
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(InstruccionesMundo2::typeid));
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->SuspendLayout();
 			// 
 			// panel1
 			// 
-			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
-			this->panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->panel1->Location = System::Drawing::Point(0, 0);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(824, 533);
-			this->panel1->TabIndex = 0;
-			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &InstruccionesMundo2::panel1_Paint);
+			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
+			this->panel2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->panel2->Location = System::Drawing::Point(0, 0);
+			this->panel2->Name = L"panel1";
+			this->panel2->Size = System::Drawing::Size(824, 533);
+			this->panel2->TabIndex = 0;
+			this->panel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &InstruccionesMundo2::panel1_Paint);
 			// 
 			// InstruccionesMundo2
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(827, 532);
-			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->panel2);
 			this->Name = L"InstruccionesMundo2";
 			this->Text = L"InstruccionesMundo2";
 			this->Load += gcnew System::EventHandler(this, &InstruccionesMundo2::InstruccionesMundo2_Load);

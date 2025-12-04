@@ -14,8 +14,8 @@ private:
 
 public:
     Bala(int x, int y, int W, int H, char tecla) {
-        this->x = x;
-        this->y = y;
+        this->x = x + 20;
+        this->y = y + 20;
         this->W = W;
         this->H = H;
         direccion = tecla;
