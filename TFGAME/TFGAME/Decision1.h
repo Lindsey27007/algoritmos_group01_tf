@@ -56,8 +56,8 @@ namespace TFGAME {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Decision1::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -73,6 +73,18 @@ namespace TFGAME {
 			this->panel1->TabIndex = 0;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Decision1::panel1_Paint);
 			// 
+			// button2
+			// 
+			this->button2->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			this->button2->Location = System::Drawing::Point(441, 410);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(322, 77);
+			this->button2->TabIndex = 1;
+			this->button2->Text = L"La confianza ciega puede ser peligrosa. Prefiero depender de mi propia sabiduría "
+				L"y habilidades, y así mantener el control.";
+			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &Decision1::button2_Click);
+			// 
 			// button1
 			// 
 			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
@@ -87,18 +99,6 @@ namespace TFGAME {
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &Decision1::button1_Click);
 			// 
-			// button2
-			// 
-			this->button2->BackColor = System::Drawing::SystemColors::MenuHighlight;
-			this->button2->Location = System::Drawing::Point(441, 392);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(322, 77);
-			this->button2->TabIndex = 1;
-			this->button2->Text = L"La confianza ciega puede ser peligrosa. Prefiero depender de mi propia sabiduría "
-				L"y habilidades, y así mantener el control.";
-			this->button2->UseVisualStyleBackColor = false;
-			this->button2->Click += gcnew System::EventHandler(this, &Decision1::button2_Click);
-			// 
 			// Decision1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -107,6 +107,7 @@ namespace TFGAME {
 			this->Controls->Add(this->panel1);
 			this->Name = L"Decision1";
 			this->Text = L"Decision1";
+			this->Load += gcnew System::EventHandler(this, &Decision1::Decision1_Load);
 			this->panel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 
@@ -127,5 +128,7 @@ namespace TFGAME {
 	private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 
 	}
+private: System::Void Decision1_Load(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

@@ -119,13 +119,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Decision1.cpp" />
+    <ClCompile Include="Decision2.cpp" />
     <ClCompile Include="Frase1.cpp" />
     <ClCompile Include="Frase2.cpp" />
+    <ClCompile Include="Frase3.cpp" />
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="Inicio.cpp" />
     <ClCompile Include="InstruccionesMundo1.cpp" />
     <ClCompile Include="InstruccionesMundo2.cpp" />
+    <ClCompile Include="InstruccionesMundo3.cpp" />
     <ClCompile Include="Juicio.cpp" />
+    <ClCompile Include="JuicioFalla.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="MyForm2.cpp" />
     <ClCompile Include="Win.cpp" />
@@ -136,12 +140,18 @@
     <ClInclude Include="Decision1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Decision2.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Entidad.h" />
     <ClInclude Include="Frase1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Frase2.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Frase3.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="GameOver.h">
@@ -156,8 +166,14 @@
     <ClInclude Include="InstruccionesMundo2.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="InstruccionesMundo3.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Jugador.h" />
     <ClInclude Include="Juicio.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="JuicioFalla.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MyForm.h">
@@ -174,11 +190,17 @@
     <EmbeddedResource Include="Decision1.resx">
       <DependentUpon>Decision1.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Decision2.resx">
+      <DependentUpon>Decision2.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frase1.resx">
       <DependentUpon>Frase1.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frase2.resx">
       <DependentUpon>Frase2.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frase3.resx">
+      <DependentUpon>Frase3.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GameOver.resx">
       <DependentUpon>GameOver.h</DependentUpon>
@@ -191,6 +213,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InstruccionesMundo2.resx">
       <DependentUpon>InstruccionesMundo2.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstruccionesMundo3.resx">
+      <DependentUpon>InstruccionesMundo3.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Juicio.resx">
+      <DependentUpon>Juicio.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JuicioFalla.resx">
+      <DependentUpon>JuicioFalla.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
