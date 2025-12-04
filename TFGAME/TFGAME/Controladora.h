@@ -1,307 +1,135 @@
 #pragma once
-#include<iostream>
 #include <vector>
-using namespace std;
+#include <algorithm>
 using namespace System::Drawing;
+using namespace std;
 
-class Entidad
-{
-public:
-	Entidad()
-	{
-	}
-
-	~Entidad()
-	{
-	}
-	void dibujar(Graphics^ gr, Bitmap^ bmp) {
-		Rectangle porcionMostrar = Rectangle(indiceW * W, indiceH * H, W, H);
-		Rectangle zoom = Rectangle(x, y, W, H);
-		gr->DrawImage(bmp, zoom, porcionMostrar, GraphicsUnit::Pixel);
-	}
-
-protected:
-	int x, y;//posición del personaje
-	int dx, dy;//velocidades del personaje en x, y
-	int indiceW, indiceH;
-	int W, H;
-	char direccion;
-};
-
-class Personaje : public Entidad
-{
-private:
-
-public:
-	Personaje(int W, int H) {
-		this->W = W;
-		this->H = H;
-		dx = 15;
-		dy = 15;
-		x = 70;
-		y = 70;
-		indiceW = 0;
-		indiceH = 0;
-		direccion = 'S';
-	}
-	~Personaje() {}
-	void mover(Graphics^ gr, char tecla) {
-		switch (tecla)
-		{
-		case 'A':
-			if (x > 0) {
-				indiceH = 1;
-				x -= dx;
-				direccion = 'A';
-			} break;
-		case 'D':
-			if (x + W < gr->VisibleClipBounds.Width) {
-				indiceH = 2;
-				x += dx;
-				direccion = 'D';
-			} break;
-		case 'W':
-			if (y > 0) {
-				indiceH = 3;
-				y -= dy;
-				direccion = 'W';
-			} break;
-		case 'S':
-			if (y + H < gr->VisibleClipBounds.Height) {
-				indiceH = 0;
-				y += dx;
-				direccion = 'S';
-			} break;
-
-			indiceW++;
-			if (indiceW > 3)indiceW = 0;
-		}
-	}
-
-	char getDireccion() { return direccion; }
-	int getX() { return x; }
-	int getY() { return y; }
-	void setX(int x) { this->x = x; }
-	void setY(int y) { this->y = y; }
-
-	Rectangle getRectangle() { return Rectangle(x, y, W, H); }
-
-
-};
-
-class Enemigo : public Entidad
-{
-private:
-
-	bool visibilidad;
-public:
-	Enemigo(int W, int H, char d) {
-		this->W = W;
-		this->H = H;
-		direccion = d;
-		dx = 20;
-		dy = 20;
-
-		// posición aleatoria
-		x = rand() % 20;
-		y = rand() % 30;
-
-		indiceW = 0;
-		indiceH = 0;
-
-		visibilidad = true;
-
-		x = rand() % 700;  // ancho máximo
-		y = rand() % 400;
-	}
-	~Enemigo() {}
-
-	void moverE(Graphics^ gr) {
-		if (direccion == 1) {
-			//los enemigs se mueven de izquierda a derecha
-			if (x + W > gr->VisibleClipBounds.Width || x < 0)dx *= -1;
-			if (dx > 0) {
-				indiceH = 2;
-			}
-			else indiceH = 1;
-			x += dx;
-		}
-		else {//de arriba hacia abajo
-			if (y + H > gr->VisibleClipBounds.Height || y < 0)dy *= -1;
-
-			if (dy > 0) {
-				indiceH = 0;
-			}
-			else indiceH = 3;
-			y += dy;
-		}
-		indiceW++;
-		if (indiceW > 3)indiceW = 0;
-	}
-	Rectangle getRectangle() { return Rectangle(x, y, W, H); }
-	void setVisibilidad(bool v) { visibilidad = v; }
-	bool getVisibilidad() { return visibilidad; }
-
-
-};
-
-class Bala
-{
-private:
-	int x, y;//posición del personaje
-	int dx, dy;//velocidades del personaje en x, y
-	int indiceW, indiceH;
-	int W, H;
-	char direccion;
-	bool visibilidad;
-public:
-	// Constructor
-	Bala(int x, int y, int W, int H, char tecla) {
-		this->x = x;
-		this->y = y;
-		this->W = W;
-		this->H = H;
-		this->direccion = tecla;
-		this->dx = 30;
-		this->dy = 30;
-		this->visibilidad = true;
-		this->indiceW = 0;
-		this->indiceH = 0;
-	}
-
-	// Destructor
-	~Bala() {}
-
-	// Dibuja la bala en la pantalla
-	void dibujarB(Graphics^ gr, Bitmap^ bmp) {
-		gr->DrawImage(bmp, x, y, (W * 0.03), (H * 0.03));
-	}
-
-	// Mueve la bala según su dirección
-	void mover(Graphics^ gr) {
-		if (direccion == 'S' && y + H * 0.03 <= gr->VisibleClipBounds.Height)
-			y += dy;
-		else if (direccion == 'W' && y >= 0)
-			y -= dy;
-		else if (direccion == 'A' && x >= 0)
-			x -= dx;
-		else if (direccion == 'D' && x + W * 0.03 < gr->VisibleClipBounds.Width)
-			x += dx;
-	}
-
-	// Devuelve el rectángulo de colisión (ajustado en tamaño)
-	Rectangle getRectangle() {
-		return Rectangle(x, y, (int)(W * 0.03), (int)(H * 0.06));
-	}
-
-	// Getters y setters
-	int getX() { return x; }
-	int getY() { return y; }
-	int getW() { return (int)(W * 0.03); }
-	int getH() { return (int)(H * 0.03); }
-
-	void setVisibilidad(bool visi) { visibilidad = visi; }
-	bool getVisibilidad() { return visibilidad; }
-};
 class Controladora {
+
 private:
-	vector<Enemigo*> arrE;
-	vector<Bala*> arrB;
-	int numeroEnemigos;
-	int intentosRestantes;
+    vector<Enemigo*> enemigos;
+    vector<Bala*> balas;
+    vector<Recurso*> recursos;
+
+    int puntos = 0;
+    int vidas = 3;
+
 public:
-	Controladora() {
-		numeroEnemigos = rand() % 5 + 3; // de 3 a 7 enemigos
-		intentosRestantes = 3;
-	}
 
-	~Controladora() {
-		for (auto e : arrE) delete e;
-		for (auto b : arrB) delete b;
-	}
-	int getIntentos() { return this->intentosRestantes; }
+    void agregarEnemigo(Enemigo* e) { enemigos.push_back(e); }
 
-	void crearEnemigos(int W, int H) {
-		for (int i = 0; i < numeroEnemigos; i++) {
-			Enemigo* e1 = new Enemigo(W, H, rand() % 2);
-			arrE.push_back(e1);
-		}
-	}
+    void moverEnemigos(Graphics^ g) {
+        for (auto e : enemigos)
+            e->moverE(g);
+    }
 
-	void agregarBalas(Bala* b1) {
-		arrB.push_back(b1);
-	}
+    void dibujarEnemigos(Graphics^ g, Bitmap^ bmp) {
+        for (auto e : enemigos)
+            if (e->getVisibilidad()) e->dibujar(g, bmp);
+    }
 
-	void dibujarTodo(Graphics^ gr, Bitmap^ bmpEnemigo, Bitmap^ bmpBala) {
-		Font^ miFuente = gcnew Font("Arial Black", 12);
-		gr->DrawString("Intentos restantes: " + intentosRestantes, miFuente, Brushes::WhiteSmoke, 400, 10);
-		gr->DrawLine(Pens::DarkBlue, 0, 100, int(gr->VisibleClipBounds.Width), 100);
+    void agregarBala(Bala* b) { balas.push_back(b); }
 
-		for (auto e : arrE) {
-			e->dibujar(gr, bmpEnemigo);
-		}
-		for (auto b : arrB) {
-			b->dibujarB(gr, bmpBala);
-		}
-		
-	}
+    void moverBalas(Graphics^ g) {
+        for (auto b : balas)
+            b->mover(g);
+    }
 
-	void moverTodo(Graphics^ gr) {
-		for (auto e : arrE) {
-			e->moverE(gr);
-		}
-		for (auto b : arrB) {
-			b->mover(gr);
-		}
-		
-	}
+    void dibujarBalas(Graphics^ g, Bitmap^ bmp) {
+        for (auto b : balas)
+            if (b->getVisibilidad()) b->dibujarB(g, bmp);
+    }
 
-	void colision(Graphics^ gr, Personaje* p1) {
+    void crearRecursos(Bitmap^ bmp) {
+        recursos.push_back(new Recurso(150, 200, bmp->Width, bmp->Height));
+        recursos.push_back(new Recurso(350, 150, bmp->Width, bmp->Height));
+        recursos.push_back(new Recurso(550, 260, bmp->Width, bmp->Height));
+    }
+
+    void dibujarRecursos(Graphics^ g, Bitmap^ bmp) {
+        for (auto r : recursos)
+            if (r->getVisible()) r->dibujar(g, bmp);
+    }
+
+    void colisionRecurso(Personaje* jugador) {
+        for (auto r : recursos) {
+            if (r->getVisible() &&
+                jugador->getRectangle().IntersectsWith(r->getRectangle()))
+            {
+                r->setVisible(false);
+                puntos++;
+            }
+        }
+    }
+    int getRecursosRestantes() {
+        int c = 0;
+        for (auto r : recursos)
+            if (r->getVisible()) c++;
+        return c;
+    }
+
+    // bala elimina enemigo
+    void colisionBalasEnemigos() {
+        for (auto b : balas)
+        {
+            if (!b->getVisibilidad()) continue;
+
+            for (auto e : enemigos)
+            {
+                if (!e->getVisibilidad()) continue;
+
+                if (b->getRectangle().IntersectsWith(e->getRectangle())) {
+                    b->setVisibilidad(false);
+                    e->setVisibilidad(false);
+                    puntos += 5;
+                }
+            }
+        }
+    }
+
+    bool colisionEnemigo(Personaje* jugador) {
+        for (auto e : enemigos) {
+            if (e->getVisibilidad() &&
+                jugador->getRectangle().IntersectsWith(e->getRectangle()))
+            {
+                vidas--;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    int getPuntos() { return puntos; }
+    int getVidas() { return vidas; }
+
+    void moverTodo(Graphics^ g) {
+
+        moverEnemigos(g);
+        moverBalas(g);
+
+        colisionBalasEnemigos(); // ?? IMPACTO BALA?ENEMIGO
+
+        // limpiar balas invisibles (con delete REAL)
+        balas.erase(remove_if(balas.begin(), balas.end(),
+            [](Bala* b) {
+                if (!b->getVisibilidad()) {
+                    delete b;      // ? MATAR OBJETO REAL
+                    return true;   // ? BORRAR PUNTERO DEL VECTOR
+                }
+                return false;
+            }),
+            balas.end());
 
 
-		// Verificar si la bala llegó a los extremos
-		for (auto b : arrB) {
-			if (b->getX() <= 0 || b->getX() + b->getW() >= gr->VisibleClipBounds.Width ||
-				b->getY() <= 0 || b->getY() + b->getH() >= gr->VisibleClipBounds.Height) {
-				b->setVisibilidad(false);
-			}
-		}
-		//colision entre jugador y enemigos
-		for (int i = 0; i < arrE.size(); i++)
-		{
-			if (arrE[i]->getRectangle().IntersectsWith(p1->getRectangle())) {
-				intentosRestantes--;
-				p1->setX(70);
-				p1->setY(70);
-				break;
-			}
-			
-		}
-		// Colisión entre balas y enemigos
-		for (int i = 0; i < arrE.size(); i++) {
-			for (int j = 0; j < arrB.size(); j++) {
-				if (arrE[i]->getRectangle().IntersectsWith(arrB[j]->getRectangle())) {
-					arrE[i]->setVisibilidad(false);
-					arrB[j]->setVisibilidad(false);
-				}
-			}
-		}
-		// Eliminar enemigos no visibles
-		for (int i = 0; i < arrE.size(); i++) {
-			if (!arrE[i]->getVisibilidad()) {
-				delete arrE[i];
-				arrE.erase(arrE.begin() + i);
-				i--;
-			}
-		}
+        // limpiar enemigos muertos
+        enemigos.erase(remove_if(enemigos.begin(), enemigos.end(),
+            [](Enemigo* e) { return !e->getVisibilidad(); }),
+            enemigos.end());
+    }
 
-		// Eliminar balas no visibles
-		for (int i = 0; i < arrB.size(); i++) {
-			if (!arrB[i]->getVisibilidad()) {
-				delete arrB[i];
-				arrB.erase(arrB.begin() + i);
-				i--;
-			}
-		}
-	}
+    void dibujarTodo(Graphics^ g, Bitmap^ bmpEnemigo, Bitmap^ bmpBala, Bitmap^ bmpRecurso) {
+        dibujarEnemigos(g, bmpEnemigo);
+        dibujarBalas(g, bmpBala);
+        dibujarRecursos(g, bmpRecurso);
+    }
 };

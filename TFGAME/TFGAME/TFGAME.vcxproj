@@ -121,13 +121,13 @@
     <ClCompile Include="Decision1.cpp" />
     <ClCompile Include="Frase1.cpp" />
     <ClCompile Include="Frase2.cpp" />
-    <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="Inicio.cpp" />
     <ClCompile Include="InstruccionesMundo1.cpp" />
     <ClCompile Include="InstruccionesMundo2.cpp" />
     <ClCompile Include="Juicio.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="MyForm2.cpp" />
     <ClCompile Include="Win.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -142,9 +142,6 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Frase2.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Game.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="GameOver.h">
@@ -166,6 +163,9 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MyForm2.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Win.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -179,9 +179,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frase2.resx">
       <DependentUpon>Frase2.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Game.resx">
-      <DependentUpon>Game.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GameOver.resx">
       <DependentUpon>GameOver.h</DependentUpon>
@@ -198,6 +195,9 @@
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm2.resx">
+      <DependentUpon>MyForm2.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Win.resx">
       <DependentUpon>Win.h</DependentUpon>

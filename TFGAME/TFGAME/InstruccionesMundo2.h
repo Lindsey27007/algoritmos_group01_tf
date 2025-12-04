@@ -1,4 +1,5 @@
 #pragma once
+#include "Frase2.h"
 
 namespace TFGAME {
 
@@ -21,6 +22,7 @@ namespace TFGAME {
 			//
 			//TODO: Add the constructor code here
 			//
+			this->KeyPreview = true;
 		}
 
 	protected:
@@ -60,20 +62,40 @@ namespace TFGAME {
 			this->panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(594, 445);
+			this->panel1->Size = System::Drawing::Size(824, 533);
 			this->panel1->TabIndex = 0;
+			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &InstruccionesMundo2::panel1_Paint);
 			// 
 			// InstruccionesMundo2
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(606, 477);
+			this->ClientSize = System::Drawing::Size(827, 532);
 			this->Controls->Add(this->panel1);
 			this->Name = L"InstruccionesMundo2";
 			this->Text = L"InstruccionesMundo2";
+			this->Load += gcnew System::EventHandler(this, &InstruccionesMundo2::InstruccionesMundo2_Load);
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &InstruccionesMundo2::InstruccionesMundo2_KeyDown);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+	}
+
+
+	private: System::Void InstruccionesMundo2_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+
+		if (e->KeyCode == Keys::Space) { // verificamos tecla ESPACIO
+			this->Hide();
+			Frase2^ f = gcnew Frase2();
+			f->ShowDialog();
+			this->Close();
+		}
+
+	}
+
+	private: System::Void InstruccionesMundo2_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
 	};
 }

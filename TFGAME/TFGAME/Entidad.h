@@ -1,26 +1,54 @@
 #pragma once
-#include<iostream>
+#include <iostream>
 using namespace System::Drawing;
-class Entidad
-{
-public:
-	Entidad()
-	{
-	}
 
-	~Entidad()
-	{
-	}
-	void dibujar(Graphics^ gr, Bitmap^ bmp) {
-		Rectangle porcionMostrar = Rectangle(indiceW * W, indiceH * H, W, H);
-		Rectangle zoom = Rectangle(x, y, W, H);
-		gr->DrawImage(bmp, zoom, porcionMostrar, GraphicsUnit::Pixel);
-	}
+class Entidad {
+public:
+    Entidad() {}
+
+    Entidad(int x, int y, int W, int H) {
+        this->x = x;
+        this->y = y;
+        this->W = W;
+        this->H = H;
+        dx = dy = 0;
+        indiceW = indiceH = 0;
+        direccion = 'D';
+    }
+
+    void dibujar(Graphics^ gr, Bitmap^ bmp) {
+        Rectangle porcion = Rectangle(indiceW * W, indiceH * H, W, H);
+        Rectangle destino = Rectangle(x, y, W, H);
+        gr->DrawImage(bmp, destino, porcion, GraphicsUnit::Pixel);
+    }
 
 protected:
-	int x, y;//posición del personaje
-	int dx, dy;//velocidades del personaje en x, y
-	int indiceW, indiceH;
-	int W, H;
-	char direccion;
+    int x, y;
+    int dx, dy;
+    int indiceW, indiceH;
+    int W, H;
+    char direccion;
+};
+
+
+class Recurso : public Entidad {
+private:
+    bool visible;
+
+public:
+    Recurso(int x, int y, int W, int H)
+        : Entidad(x, y, W, H)
+    {
+        visible = true;
+    }
+
+    void dibujar(Graphics^ g, Bitmap^ bmp) {
+        if (visible)
+            g->DrawImage(bmp, x, y, 30, 30); // tama?o
+    }
+
+    Rectangle getRectangle() { return Rectangle(x, y, 30, 30); }
+
+    void setVisible(bool v) { visible = v; }
+    bool getVisible() { return visible; }
 };

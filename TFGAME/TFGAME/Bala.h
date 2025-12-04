@@ -1,61 +1,65 @@
 #pragma once
-#include<iostream>
+#include <iostream>
 using namespace System::Drawing;
+
 class Bala
 {
 private:
-    int x, y;//posición del personaje
-    int dx, dy;//velocidades del personaje en x, y
-    int indiceW, indiceH;
+    int x, y;
+    int dx, dy;
     int W, H;
+    int indiceW, indiceH;
     char direccion;
     bool visibilidad;
+
 public:
-    // Constructor
     Bala(int x, int y, int W, int H, char tecla) {
         this->x = x;
         this->y = y;
         this->W = W;
         this->H = H;
-        this->direccion = tecla;
-        this->dx = 30;
-        this->dy = 30;
-        this->visibilidad = true;
-        this->indiceW = 0;
-        this->indiceH = 0;
+        direccion = tecla;
+        dx = 30;
+        dy = 30;
+        visibilidad = true;
+        indiceW = indiceH = 0;
     }
 
-    // Destructor
     ~Bala() {}
 
-    // Dibuja la bala en la pantalla
     void dibujarB(Graphics^ gr, Bitmap^ bmp) {
-        gr->DrawImage(bmp, x, y, (W * 0.03), (H * 0.03));
+        int w = (int)(W * 0.03f);
+        int h = (int)(H * 0.03f);
+        gr->DrawImage(bmp, x, y, w, h);
     }
 
-    // Mueve la bala según su dirección
     void mover(Graphics^ gr) {
-        if (direccion == 'S' && y + H * 0.03 <= gr->VisibleClipBounds.Height)
-            y += dy;
-        else if (direccion == 'W' && y >= 0)
-            y -= dy;
-        else if (direccion == 'A' && x >= 0)
-            x -= dx;
-        else if (direccion == 'D' && x + W * 0.03 < gr->VisibleClipBounds.Width)
-            x += dx;
+        int limiteW = (int)gr->VisibleClipBounds.Width;
+        int limiteH = (int)gr->VisibleClipBounds.Height;
+
+        // movnormal
+        if (direccion == 'S') y += dy;
+        if (direccion == 'W') y -= dy;
+        if (direccion == 'A') x -= dx;
+        if (direccion == 'D') x += dx;
+
+        // desactivamos la bala
+        if (x < 0 || y < 0 ||
+            x + (int)(W * 0.03f) > limiteW ||
+            y + (int)(H * 0.03f) > limiteH)
+        {
+            visibilidad = false;
+        }
     }
 
-    // Devuelve el rectángulo de colisión (ajustado en tamaño)
+
     Rectangle getRectangle() {
-        return Rectangle(x, y, (int)(W * 0.03), (int)(H * 0.06));
+        return Rectangle(x, y, (int)(W * 0.03f), (int)(H * 0.03f));
     }
 
-    // Getters y setters
     int getX() { return x; }
     int getY() { return y; }
-    int getW() { return (int)(W * 0.03); }
-    int getH() { return (int)(H * 0.03); }
 
-    void setVisibilidad(bool visi) { visibilidad = visi; }
+    void setVisibilidad(bool v) { visibilidad = v; }
     bool getVisibilidad() { return visibilidad; }
 };

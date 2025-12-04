@@ -1,6 +1,6 @@
 #pragma once
 #include "GameOver.h"
-//#include "InstruccionesMundo2.h"
+#include "InstruccionesMundo2.h"
 
 namespace TFGAME {
 
@@ -113,10 +113,19 @@ namespace TFGAME {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Hide(); 
+		GameOver^ go = gcnew GameOver();
+		go->ShowDialog(); 
+		this->Close();
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Hide();
+		InstruccionesMundo2^ inst = gcnew InstruccionesMundo2();
+		inst->ShowDialog();
+		this->Close();
 	}
 	private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+
 	}
 };
 }
