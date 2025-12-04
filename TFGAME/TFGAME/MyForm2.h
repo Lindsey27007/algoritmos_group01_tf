@@ -6,6 +6,7 @@
 #include "Enemigo.h"
 #include "Controladora.h"
 #include"GameOver.h"
+#include"InstruccionesMundo3.h"
 namespace TFGAME {
 
     using namespace System;
@@ -134,9 +135,8 @@ namespace TFGAME {
                 timer1->Enabled = false;
                 this->Hide();
 
-                // Pongan acá la decision 2
-                //Decision2^ decision = gcnew Decision2();
-                //decision->ShowDialog();
+                InstruccionesMundo3^ inst3 = gcnew InstruccionesMundo3();
+                inst3->ShowDialog();
 
                 this->Close();
                 return;
