@@ -63,108 +63,88 @@ En conjunto, los casos analizados no solo contribuyen a la reflexión académica
 ```mermaid
 classDiagram
 
-Entidad <|-- Jugador
-Entidad <|-- Auto
-Entidad <|-- Secretario
-Entidad <|-- Piezas
+Entidad <|-- Recurso
+Entidad <|-- Bala
+Entidad <|-- Enemigo
 
-Controlador *-- ArregloRecursos
-Controlador *-- ArregloEnemigos
-Controlador *-- Jugador
+Controladora *-- Enemigo
+Controladora *-- Bala
+Controladora *-- Recurso
 
-ArregloEnemigos *-- Auto
-ArregloEnemigos *-- Secretario
-
-ArregloRecursos *-- Piezas
-
-class Controlador {
-    -arrPieza : ArregloRecursos*
-    -arrEnemigos : ArregloEnemigos*
-    -jugador : Jugador*
-    -nivelActual : int
-    -piezasObjetivo : int
-    -lastSpawnMs : unsigned long
-    -spawnIntervalMs : int
-    -maxEnemigosNivel : int
-    -alternarTipo : bool
-
-    +configurarNivel() void
-    +intentarSpawnear() void
-    +jugarNivel() bool
-    +mover() void
-    +mostrarVidasJugador() void
-    +run() void
-}
 class Entidad {
     #x : int
     #y : int
     #dx : int
     #dy : int
-    #ancho : int
-    #alto : int
+    #indiceW : int
+    #indiceH : int
+    #W : int
+    #H : int
+    #direccion : char
 
-    +mostrar() void
-    +mover() void
-    +borrar() void
-    +intersectar(Entidad* b) bool
+    +dibujar(Graphics^, Bitmap^) void
 }
-class Jugador {
+
+class Recurso {
+    -visible : bool
+
+    +dibujar(Graphics^, Bitmap^) void
+    +getRectangle() Rectangle
+    +setVisible(bool) void
+    +getVisible() bool
+}
+
+class Bala {
+    -visibilidad : bool
+
+    +dibujarB(Graphics^, Bitmap^) void
+    +mover(Graphics^) void
+    +getRectangle() Rectangle
+    +getX() int
+    +getY() int
+    +setVisibilidad(bool) void
+    +getVisibilidad() bool
+}
+
+class Enemigo {
+    -visibilidad : bool
+
+    +moverE(Graphics^) void
+    +getRectangle() Rectangle
+    +setVisibilidad(bool) void
+    +getVisibilidad() bool
+}
+
+class Controladora {
+    -enemigos : vector~Enemigo*~
+    -balas : vector~Bala*~
+    -recursos : vector~Recurso*~
+    -puntos : int
     -vidas : int
-    -spawnX : int
-    -spawnY : int
 
-    +mostrar() void
-    +mover() void
-    +borrar() void
-    +setSpawn() void
-    +puedeSerGolpeado() bool
-    +recibirGolpe() bool
+    +agregarEnemigo(Enemigo*) void
+    +moverEnemigos(Graphics^) void
+    +dibujarEnemigos(Graphics^, Bitmap^) void
+
+    +agregarBala(Bala*) void
+    +moverBalas(Graphics^) void
+    +dibujarBalas(Graphics^, Bitmap^) void
+
+    +crearRecursos(Bitmap^) void
+    +dibujarRecursos(Graphics^, Bitmap^) void
+    +colisionRecurso(Personaje*) void
+    +getRecursosRestantes() int
+
+    +colisionBalasEnemigos() void
+    +colisionEnemigo(Personaje*) bool
+
+    +getPuntos() int
     +getVidas() int
-    +setVidas() void
+
+    +moverTodo(Graphics^) void
+    +dibujarTodo(Graphics^, Bitmap^, Bitmap^, Bitmap^) void
 }
 
-class Auto {
-    +mostrar() void
-    +borrar() void
-    +mover() void
-}
-
-class Secretario {
-    +mostrar() void
-    +borrar() void
-    +mover() void
-}
-
-class Piezas {
-    +mostrar() void
-    +borrar() void
-    +mover() void
-}
-class ArregloEnemigos {
-    -arrE1 : vector~Auto*~
-    -arrE2 : vector~Secretario*~
-
-    +agregarEnemigo1() void
-    +agregarEnemigo2() void
-    +actualizarTodos() void
-    +verificarCollisionAutos(Jugador* jugador) void
-    +verificarCollisionSecretario(Jugador* jugador) void
-    +cantidadAutos() int
-    +cantidadSecretarios() int
-    +totalEnemigos() int
-    +reiniciar() void
-}
-
-class ArregloRecursos {
-    -piezas : vector~Pieza*~
-
-    +agregar() void
-    +borrar() void
-    +mostrarTodos() void
-    +collisionPiezas(Jugador* jugador) void
-    +getPiezas() int
-    +reiniciar() void
-}
 ```
 ## Recursos a Utilizar
 [Acceder a carpeta de Recursos](ImagenesInforme/Recursos/)
