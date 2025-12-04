@@ -118,11 +118,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Error.cpp" />
+    <ClCompile Include="Decision1.cpp" />
     <ClCompile Include="Frase1.cpp" />
     <ClCompile Include="Frase2.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="Inicio.cpp" />
+    <ClCompile Include="InstruccionesMundo1.cpp" />
+    <ClCompile Include="InstruccionesMundo2.cpp" />
     <ClCompile Include="Juicio.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Win.cpp" />
@@ -130,11 +133,11 @@
   <ItemGroup>
     <ClInclude Include="Bala.h" />
     <ClInclude Include="Controladora.h" />
-    <ClInclude Include="Enemigo.h" />
-    <ClInclude Include="Entidad.h" />
-    <ClInclude Include="Error.h">
+    <ClInclude Include="Decision1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Enemigo.h" />
+    <ClInclude Include="Entidad.h" />
     <ClInclude Include="Frase1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -144,7 +147,16 @@
     <ClInclude Include="Game.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="GameOver.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Inicio.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="InstruccionesMundo1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="InstruccionesMundo2.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Jugador.h" />
@@ -159,8 +171,8 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Error.resx">
-      <DependentUpon>Error.h</DependentUpon>
+    <EmbeddedResource Include="Decision1.resx">
+      <DependentUpon>Decision1.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frase1.resx">
       <DependentUpon>Frase1.h</DependentUpon>
@@ -171,11 +183,18 @@
     <EmbeddedResource Include="Game.resx">
       <DependentUpon>Game.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GameOver.resx">
+      <DependentUpon>GameOver.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InstruccionesMundo1.resx">
+      <DependentUpon>InstruccionesMundo1.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Win.resx">
       <DependentUpon>Win.h</DependentUpon>

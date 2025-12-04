@@ -1,6 +1,6 @@
 #pragma once
 #include "MyForm.h"
-#include "Frase1.h" 
+#include "InstruccionesMundo1.h" 
 namespace TFGAME {
 
 	using namespace System;
@@ -63,6 +63,8 @@ namespace TFGAME {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->StartPosition = FormStartPosition::CenterScreen;
+
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Inicio::typeid));
 			this->progressBar1 = (gcnew System::Windows::Forms::ProgressBar());
@@ -131,13 +133,11 @@ namespace TFGAME {
 			this->Hide();
 
 			// Mostrar formulario de la frase
-			Frase1^ frase = gcnew Frase1();
-			frase->ShowDialog();
+			InstruccionesMundo1^ inst = gcnew InstruccionesMundo1();
+			inst->ShowDialog();
 
 			form->ShowDialog();
-			delete buffer;
-			delete panel;
-			delete form;
+			this->Close();
 		}
 
 

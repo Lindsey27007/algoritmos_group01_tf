@@ -257,6 +257,8 @@ public:
 	}
 
 	void colision(Graphics^ gr, Personaje* p1) {
+
+
 		// Verificar si la bala llegó a los extremos
 		for (auto b : arrB) {
 			if (b->getX() <= 0 || b->getX() + b->getW() >= gr->VisibleClipBounds.Width ||

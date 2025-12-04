@@ -21,6 +21,9 @@ namespace TFGAME {
 			//
 			//TODO: Add the constructor code here
 			//
+			this->KeyPreview = true;
+			this->KeyDown += gcnew KeyEventHandler(this, &Frase1::Frase_KeyDown);
+
 		}
 
 	protected:
@@ -54,6 +57,8 @@ namespace TFGAME {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->StartPosition = FormStartPosition::CenterScreen;
+
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Frase1::typeid));
 			this->panelFrase = (gcnew System::Windows::Forms::Panel());
@@ -70,10 +75,7 @@ namespace TFGAME {
 			this->panelFrase->TabIndex = 0;
 			this->panelFrase->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Frase1::panel1_Frase);
 			// 
-			// timer1
-			// 
-			this->timer1->Tick += gcnew System::EventHandler(this, &Frase1::timer1_Tick);
-			// 
+			
 			// Frase1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -89,14 +91,19 @@ namespace TFGAME {
 #pragma endregion
 	
 	private: System::Void Frase1_Load(System::Object^ sender, System::EventArgs^ e) {
-		timer1->Interval = 3000; // 3 segundos mostrando frase
-		timer1->Start();
+		
 
 	}
-	private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
-		timer1->Stop();
-		this->Close();
+	private: System::Void Frase_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+		if (e->KeyCode == Keys::Space)
+		{
+			this->Hide();
+			MyForm^ juego = gcnew MyForm();
+			juego->ShowDialog();
+			this->Close();
+		}
 	}
+
 	private: System::Void panel1_Frase(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 	}
 	};

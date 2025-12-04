@@ -33,10 +33,19 @@
     <ClCompile Include="Win.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Error.cpp">
+    <ClCompile Include="Juicio.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Juicio.cpp">
+    <ClCompile Include="InstruccionesMundo1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Decision1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InstruccionesMundo2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -74,10 +83,19 @@
     <ClInclude Include="Win.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Error.h">
+    <ClInclude Include="Juicio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Juicio.h">
+    <ClInclude Include="InstruccionesMundo1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Decision1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InstruccionesMundo2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,5 +1,6 @@
 #pragma once
 #include"Controladora.h"
+#include"GameOver.h"
 namespace TFGAME {
 
 	using namespace System;
@@ -33,7 +34,10 @@ namespace TFGAME {
 			p1 = new Personaje(personaje->Width / 4, personaje->Height / 4);
 			control = new Controladora();
 			control->crearEnemigos(enemigo->Width / 4, enemigo->Height / 4);
+
 			this->KeyPreview = true;
+			
+			timer1->Enabled = false;
 
 		}
 
@@ -73,6 +77,10 @@ namespace TFGAME {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			
+
+			this->StartPosition = FormStartPosition::CenterScreen;
+
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
@@ -81,7 +89,7 @@ namespace TFGAME {
 			// 
 			// timer1
 			// 
-			this->timer1->Enabled = true;
+		/*	this->timer1->Enabled = true;*/
 			this->timer1->Tick += gcnew System::EventHandler(this, &MyForm::timer1_Tick);
 			// 
 			// panel1
@@ -108,19 +116,30 @@ namespace TFGAME {
 		}
 #pragma endregion
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		
+		timer1->Enabled = true;
 	}
 	private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
 		buffer->Graphics->DrawImage(mapa, 0, 0, panel1->Width, panel1->Height);
 
 		//buffer->Graphics->Clear(Color::White);
-		control->colision(buffer->Graphics, p1);// aqui el errro de function does  note take 1 argumentd
+		control->colision(buffer->Graphics, p1);
 		control->moverTodo(buffer->Graphics);
 
 
 		control->dibujarTodo(buffer->Graphics, enemigo, bala);
 		p1->dibujar(buffer->Graphics, personaje);
 		buffer->Render(gr);
+
+		if (control->getIntentos() <= 0) {
+			timer1->Enabled = false;  // Detener el juego
+			this->Hide();             // Ocultar el juego
+
+			GameOver^ g = gcnew GameOver();
+			g->ShowDialog();
+
+			this->Close();            // Cerrar juego al volver
+		}
+
 	}
 	private: System::Void MyForm_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 		switch (e->KeyCode)
