@@ -34,6 +34,8 @@ namespace TFGAME {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Panel^ panel1;
+	protected:
 
 	private:
 		/// <summary>
@@ -48,11 +50,29 @@ namespace TFGAME {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"InstruccionesMundo2";
-			this->Padding = System::Windows::Forms::Padding(0);
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(InstruccionesMundo2::typeid));
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->SuspendLayout();
+			// 
+			// panel1
+			// 
+			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
+			this->panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->panel1->Location = System::Drawing::Point(0, 0);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(594, 445);
+			this->panel1->TabIndex = 0;
+			// 
+			// InstruccionesMundo2
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(606, 477);
+			this->Controls->Add(this->panel1);
+			this->Name = L"InstruccionesMundo2";
+			this->Text = L"InstruccionesMundo2";
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
 	};

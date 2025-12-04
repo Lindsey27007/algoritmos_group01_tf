@@ -192,6 +192,9 @@
     <EmbeddedResource Include="InstruccionesMundo1.resx">
       <DependentUpon>InstruccionesMundo1.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InstruccionesMundo2.resx">
+      <DependentUpon>InstruccionesMundo2.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
       <SubType>Designer</SubType>
