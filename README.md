@@ -8,6 +8,8 @@
 - Sebastián Castillo
 - Castro Palacios Lindsey Yorget
 
+- [Link video grupo1](https://drive.google.com/file/d/1utcHPr_jh4tVoDxPJC62l5J-6rZ94bAz/view?usp=sharing)
+
 ## Casos:
 
 ### Mundo IA – La Máquina Suprema
