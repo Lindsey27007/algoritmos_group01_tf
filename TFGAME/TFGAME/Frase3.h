@@ -93,8 +93,8 @@ namespace TFGAME {
 
 		if (e->KeyCode == Keys::Space) {
 			this->Hide();
-			Frase3^ frase = gcnew Frase3();
-			frase->ShowDialog();
+			Decision2^ d = gcnew Decision2();
+			d->ShowDialog();
 			this->Close();
 		}
 

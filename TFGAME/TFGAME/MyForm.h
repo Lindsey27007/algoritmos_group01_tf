@@ -44,7 +44,7 @@ namespace TFGAME {
             enemigo = gcnew Bitmap("Imagenes\\enemigoRobot.png");
             bala = gcnew Bitmap("Imagenes\\efectos1.png");
             mapa = gcnew Bitmap("Imagenes\\Mundo1.png");
-            recurso = gcnew Bitmap("Imagenes\\tuerca.png");
+            recurso = gcnew Bitmap("Imagenes\\Tuerca.jpg");
 
             p1 = new Personaje(personaje->Width / 4, personaje->Height / 4);
             control = new Controladora();
@@ -152,7 +152,7 @@ namespace TFGAME {
                 p1->setX(60);
                 p1->setY(60);
 
-                // �Se qued� sin vidas?
+                
                 if (control->getVidas() <= 0)
                 {
                     timer1->Enabled = false;
