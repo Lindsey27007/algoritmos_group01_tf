@@ -23,7 +23,7 @@ namespace TFGAME {
 			//TODO: Add the constructor code here
 			//
 			this->KeyPreview = true;
-
+			this->KeyDown += gcnew KeyEventHandler(this, &Frase2::Frase2_KeyDown);
 		}
 
 	protected:
