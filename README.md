@@ -7,7 +7,8 @@
 - Villamar Rojas Santiago Augusto
 - Sebastián Castillo
 - Castro Palacios Lindsey Yorget
-[TLINK VIDEO](https://drive.google.com/file/d/1utcHPr_jh4tVoDxPJC62l5J-6rZ94bAz/view?usp=sharing))
+
+- [LINK VIDEO GRUPAL](https://drive.google.com/file/d/1utcHPr_jh4tVoDxPJC62l5J-6rZ94bAz/view?usp=sharing))
 
 ## Casos:
 
