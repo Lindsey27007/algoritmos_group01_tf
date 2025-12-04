@@ -25,7 +25,7 @@ namespace TFGAME {
 			panel = panel1->CreateGraphics();
 			buffer = BufferedGraphicsManager::Current->Allocate(panel, panel1->ClientRectangle);
 			form = gcnew MyForm();
-			bmpBackground = gcnew Bitmap("Imagenes\\Pantalla_Inicio.jpg");
+			bmpBackground = gcnew Bitmap("Imagenes\\Pantalla_Inicio.png");
 		}
 
 	protected:

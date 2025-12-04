@@ -48,6 +48,18 @@
     <ClCompile Include="MyForm2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Frase3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InstruccionesMundo3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Decision2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JuicioFalla.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -96,6 +108,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MyForm2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Frase3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InstruccionesMundo3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Decision2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="JuicioFalla.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
